@@ -11,8 +11,22 @@
  * It is generally better to create a new file per style scope.
  *
  */
- @import "bootstrap";
+@import "bootstrap";
  
- body { 
-   background-color: #708090;
- }
+body { 
+  background-color: #708090;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: black
+}
+
+.card:hover {
+  outline: #607080 solid 1px;
+  box-shadow: 1px 1px 2px 2px #556575;
+}
