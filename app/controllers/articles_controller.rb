@@ -3,6 +3,7 @@
 class ArticlesController < ApplicationController
   def index
     @articles = Article.all
+    @path = request.filtered_path
   end
 
   def show
