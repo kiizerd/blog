@@ -1,6 +1,22 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
+  def make_fake_article
+    params = {
+      title: "#{Faker::Verb.past} #{Faker::App.name}".titleize,
+      body: (Faker::Lorem.paragraph(sentence_count: 8).split +
+             Faker::Lorem.questions(number: 2).split)
+             .join(' ')
+    }
+
+    Article.new(params).save
+  end
+
+  def demo_action
+    1.times { make_fake_article }
+    redirect_to root_path
+  end
+
   def index
     @articles = Article.all
     @path = request.filtered_path
