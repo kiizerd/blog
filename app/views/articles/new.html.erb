@@ -1,0 +1,17 @@
+<h3>New Article</h3>
+
+<%= form_with model: @article do |form| %>
+  <div>
+    <%= form.label :title%><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.submit "Submit", disable_with: 'Submiting...' %>
+  </div>
+<%= end %>
