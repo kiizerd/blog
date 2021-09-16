@@ -4,8 +4,12 @@
 
 <div id="article-btn-group">
   <ul>
-    <li class="article-btn" ><%= link_to "Home", root_path %><br></li>
-    <li><%= link_to "Edit", edit_article_path(@article) %><br></li>
+    <li class="article-btn">
+      <%= link_to "Home", root_path %>
+    </li>
+    <li>
+      <%= link_to "Edit", edit_article_path(@article) %>
+    </li>
     <li>
       <%= link_to "Delete", article_path(@article),
                   method: :delete,
@@ -14,35 +18,12 @@
   </ul>
 </div>
 
-<section id="add-comment-section">
-  <h3 id="add-comment-header">Add a comment:</h3>
-  <%= form_with model: [ @article, @article.comments.build ] do |form| %>
-    <p>
-      <%= form.label :commenter, "Commenter:" %> <br>
-      <%= form.text_field :commenter %>
-    </p>
-    <p>
-      <%= form.label :body, "Comment:" %> <br>
-      <%= form.text_area :body %>
-    </p>
-    <p>
-      <%= form.submit "Create comment", disable_with: 'creating...' %>
-    </p>
-  <% end %>
-</section>
-
 <section id="index-comments-section">
   <h3 id="index-comment-header">Comments:</h3>
-  <% @article.comments.each do |comment| %>
-    <article class='article-comment'>
-      <p>
-        <strong>Commenter:</strong>
-        <%= comment.commenter %>
-      </p>
-      <p>
-        <strong>Comment:</strong>
-        <%= comment.body %>
-      </p>
-    </article>
-  <% end %>
+  <%= render @article.comments %>
+</section>
+
+<section id="add-comment-section">
+  <h3 id="add-comment-header">Add a comment:</h3>
+  <%= render 'comments/form' %>
 </section>
