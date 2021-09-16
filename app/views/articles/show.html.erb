@@ -1,13 +1,32 @@
-<h2><%= @article.title %></h2>
+<h2 class="article-title"><%= @article.title %></h2>
 
-<p><%= @article.body %></p>
+<article class="article-body" ><%= @article.body %></article>
 
-<ul>
-  <li>
-    <%= link_to "Home", root_path %><br>
-    <%= link_to "Edit", edit_article_path(@article) %><br>
-    <%= link_to "Delete", article_path(@article),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %> 
-  </li>  
-</ul>
+<div class="article-btn-group">
+  <ul>
+    <li class="article-btn" >
+      <%= link_to "Home", root_path %><br>
+      <%= link_to "Edit", edit_article_path(@article) %><br>
+      <%= link_to "Delete", article_path(@article),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %> 
+    </li>  
+  </ul>
+</div>
+
+<section class="comment-section">
+  <h3 class="comment-header">Add a comment:</h3>
+  <%= form_with model: [ @article, @article.comments.build ] do |form| %>
+    <article class='article-comment'>
+      <p>
+        <%= form.label :commenter, "Commenter:" %> <br>
+        <%= form.text_field :commenter %>
+      </p>
+
+      <p>
+        <%= form.label :body, "Body:" %> <br>
+        <%= form.text_area :body %>
+      </p>
+    </article>
+  <% end %>
+</section>
