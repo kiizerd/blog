@@ -4,7 +4,8 @@
 
 <ul>
   <li>
-    <%= link_to "Edit", edit_article_path(@article) %>
+    <%= link_to "Home", root_path %><br>
+    <%= link_to "Edit", edit_article_path(@article) %><br>
     <%= link_to "Delete", article_path(@article),
                 method: :delete,
                 data: { confirm: "Are you sure?" } %> 
