@@ -1,7 +1,8 @@
 <h2>Articles</h2>
 
 <%= button_to "New Article", new_article_path,
-              method: :get %>
+              method: :get,
+              form_class: 'new-article-btn' %>
 
 <ul>
   <% @articles.each do |article| %>
