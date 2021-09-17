@@ -14,7 +14,7 @@
 @import "bootstrap";
  
 body { 
-  background-color: #6585cc;
+  background-color: #6585bb;
 }
 
 a {
@@ -30,4 +30,11 @@ a:hover {
   // outline: #607080 solid 1px;
   box-shadow: 1px 1px 5px 5px #456085;
   transition: box-shadow .2s linear;
+}
+
+.article-content {
+  background-color: #ececdb;
+  padding: 3rem;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px 4px #607099;
 }
