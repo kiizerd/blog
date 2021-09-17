@@ -1,13 +1,15 @@
 <div class="col-sm-4">
   <%= link_to article do %>
-  <div class="card mb-3">
-    <div class="card-body">
-    <h5 class='card-title text-dark'>
-      <%= article.title.titleize %>
-    </h5>
-    <p class="card-text text-muted">
-      <%= article.body.truncate(100) %>
-    </p>
+  <div class="card mb-3 bg-secondary">
+    <div class="card-header">
+      <h5 class='card-title text-white'>
+        <%= article.title.titleize %>
+      </h5>
+      </div>
+      <div class="card-body bg-dark">
+      <p class="card-text text-white">
+        <%= article.body.truncate(100) %>
+      </p>
     </div>
   </div>
   <% end %>
