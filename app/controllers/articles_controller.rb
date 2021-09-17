@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
+# Main Blog data
 class ArticlesController < ApplicationController
   def make_fake_article
     params = {
       title: "#{Faker::Verb.past} #{Faker::App.name}".titleize,
-      body: (Faker::Lorem.paragraph(sentence_count: 8).split +
-             Faker::Lorem.questions(number: 2).split)
+      body: (Faker::Lorem.paragraph(sentence_count: 30).split +
+             Faker::Lorem.questions(number: 4).split)
              .join(' ')
     }
 
@@ -13,7 +14,7 @@ class ArticlesController < ApplicationController
   end
 
   def demo_action
-    1.times { make_fake_article }
+    (params[:demo_count] || 1).times { make_fake_article }
     redirect_to root_path
   end
 
