@@ -14,7 +14,7 @@
 @import "bootstrap";
  
 body { 
-  background-color: #708090;
+  background-color: #6585cc;
 }
 
 a {
@@ -27,6 +27,7 @@ a:hover {
 }
 
 .card:hover {
-  outline: #607080 solid 1px;
-  box-shadow: 1px 1px 2px 2px #556575;
+  // outline: #607080 solid 1px;
+  box-shadow: 1px 1px 5px 5px #456085;
+  transition: box-shadow .2s linear;
 }
