@@ -1,13 +1,16 @@
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
-  <p>
-    <%= form.label :commenter, "Commenter:" %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :body, "Comment:" %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit "Create comment", disable_with: 'creating...' %>
-  </p>
+  <div>
+    <%= form.label :body, "Comment:", class: 'form-label' %><br>
+    <%= form.text_area :body, class: 'form-control' %>
+  </div>
+  <div class="row p-0 m-0">
+    <span class="col my-2">
+      <%= form.label :author, "Name:", class: 'form-label' %>    
+    </span>
+    <span class="col-10 my-2">
+      <%= form.text_field :author, class: 'form-control' %>    
+    </span>
+    <%= form.submit "Create comment", disable_with: 'creating...', 
+                    class: 'btn btn-secondary mt-1' %>
+  </div>
 <% end %>

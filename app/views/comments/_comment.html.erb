@@ -1,15 +1,25 @@
-<article class='article-comment'>
-  <p>
-    <p>Commenter:</p>
-    <%= comment.commenter %>
-  </p>
-  <p>
-    <p>Comment:</p>
-    <%= comment.body %>
-  </p>
+<article class='h-50 mb-3'>
+  <div class="card  bg-secondary">
+    <div class="card-header text-white border-bottom">
+      <div class="row">
+        <div class="col-11">
+          <h5><i><%= comment.author %></i></h5>
+        </div>
+        <div class="col">
+          <%= link_to [comment.article, comment],
+                      method: :delete, data: { confirm: "Are you sure?" },
+                      class: 'btn-btn-secondary end-0' do %>
+                        <i class="bi bi-trash"></i>
+                      <% end %>
+        </div>      
+      </div>
+    </div>
+    <div class="card-body bg-dark">
+      <p class="text-white">
+        <%= comment.body %>      
+      </p>
+    </div>
 
-  <%= button_to 'Delete Comment', [comment.article, comment],
-                method: :delete,
-                data: { confirm: "Are you sure?" } %>
+  </div>
 </article>
 
