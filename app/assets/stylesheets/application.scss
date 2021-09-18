@@ -27,7 +27,6 @@ a:hover {
 }
 
 a .card:hover {
-  // outline: #607080 solid 1px;
   box-shadow: 1px 1px 5px 5px #456085;
   transition: box-shadow .2s linear;
 }
@@ -37,7 +36,25 @@ a .card:hover {
   width: 75%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 4rem;
   padding: 3rem;
+  padding-bottom: 3rem;
   border-radius: 4px;
   box-shadow: 2px 2px 4px 4px #607099;
+}
+
+@media only screen and (max-width: 750px) {
+  .article-content {
+    width: auto;
+    padding: 24px 0 3rem 0;
+  }
+
+  .article-content section {
+    width: 90% !important;
+    margin-bottom: 1rem;
+  }
+
+  .article-content section a {
+    width: 24%;
+  }
 }
