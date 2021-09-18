@@ -1,10 +1,15 @@
 <div class="article-content">
-<div class="p-1 w-75 row mb-4 mx-auto">
-  <div class="col me-5">
-    <h2 class=""><%= @article.title %></h2>
+<div class="p-1 row mb-4 mx-auto" style='width: 85%;'>
+  <div class="col">
+    <h2 class="float-start me-2"><%= @article.title %></h2>
+    <% @article.tags.each do |tag| %>
+      <%= link_to tag_path(tag) do %>
+        <span class="badge rounded-pill bg-info"><%= tag.name %></span>
+      <% end %>
+    <% end %>
   </div>
-  <div class="col ms-5">
-    <div class="btn-group start-100" role="group" aria-label="Article control buttons">
+  <div class="col-3">
+    <div class="btn-group float-end" role="group" aria-label="Article control buttons">
         <%= link_to root_path, class: 'btn btn-secondary' do %>
           <i class="bi bi-house"></i>
         <% end %>

@@ -7,4 +7,6 @@ Rails.application.routes.draw do
     get :demo_action
     resources :comments
   end
+
+  resources :tags
 end

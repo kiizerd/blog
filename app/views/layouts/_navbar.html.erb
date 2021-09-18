@@ -7,11 +7,12 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <% article_nav_link_class = path == '/' ? 'nav-link active' : 'nav-link' %>
-          <%= link_to "Articles", articles_path, class: article_nav_link_class %>
+          <% article_link_class = path =~ /^(\/|\/articles)$/ ? 'nav-link active' : 'nav-link' %>
+          <%= link_to "Articles", articles_path, class: article_link_class %>
         </li>
         <li class="nav-item">
-          <%= link_to "Tags", root_path, class: 'nav-link' %>
+          <% tag_link_class = path =~ /(\/tags)/ ? 'nav-link active' : 'nav-link' %>
+          <%= link_to "Tags", tags_path, class: tag_link_class %>
         </li>
       </ul>
     </div>

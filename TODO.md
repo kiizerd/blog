@@ -1,7 +1,9 @@
  ### TODO - Rails Blog
   - Validate comments
-  - Generate Tag Model and Controller
-  - Generate Tagging Model and Controller
-  - Style Tags page
+
+  - add demo comment button
+  - remove hover from comment cards
+
+  - Rewrite Concerns section of getting started guide and apply here
 
   - User authentication
