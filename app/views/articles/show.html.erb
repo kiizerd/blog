@@ -30,14 +30,15 @@
 <hr class='my-5'>
 
 <section class="w-50 row m-auto">
-  <h4 class="">Comments</h4>
+  <h4>Comments</h4>
     <%= render @article.comments%>
 </section>
 
 <hr class="my-5">
 
 <section class="w-50 row m-auto">
-  <h4 class="row">Add comment</h4>
+  <h4 class="col">Add comment</h4>
+  <%= link_to "Demo", "/articles/#{@article.id}/comment_demo_action", class: 'col-2 btn btn-success' %>
   <%= render 'comments/form' %>
 </section>
 </div>

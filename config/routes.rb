@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   end
 
   resources :tags
+
+  get '/articles/:id/comment_demo_action', to: 'comments#demo_action'
 end
