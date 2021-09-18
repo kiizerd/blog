@@ -7,7 +7,8 @@ class ArticlesController < ApplicationController
       title: "#{Faker::Verb.past} #{Faker::App.name}".titleize,
       body: (Faker::Lorem.paragraph(sentence_count: 30).split +
              Faker::Lorem.questions(number: 4).split)
-             .join(' ')
+             .join(' '),
+      tag_list: 'ruby, rails, faker-gem, demo'
     }
 
     Article.new(params).save
