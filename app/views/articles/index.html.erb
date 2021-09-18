@@ -1,7 +1,7 @@
-<div class='row mb-3'>
+<div class='row my-3'>
   <div class="col">
   <%= link_to "New Article", new_article_path, class: 'btn btn-primary' %>
-  <%= link_to "Demo", article_demo_action_path(Article.find(3)), class: 'btn btn-success' %>
+  <%= link_to "Demo", article_demo_action_path(Article.all.first), class: 'btn btn-success' %>
   </div>
 </div>
 
