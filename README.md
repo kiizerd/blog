@@ -2,6 +2,8 @@
 
 Simple Blog web-app made with Ruby on Rails.
 
+[Website](https://aqueous-fjord-16724.herokuapp.com/)
+
 ## Description
 
 A simple blog app made by following the [Getting Started with Rails](https://guides.rubyonrails.org/getting_started.html) guide from the Rails website, but expanded a bit.  
